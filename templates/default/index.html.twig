@@ -22,5 +22,13 @@
             <li>{{ user.name }} - Congratulations! You've won a {{ gifts[loop.index0] }}</li>
         {% endfor %}
     </ul>
+
+    {% for label,messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}
